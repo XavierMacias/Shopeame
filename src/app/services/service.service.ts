@@ -30,4 +30,22 @@ export class ServiceService {
   deleteProduct(id:number) {
     return this.http.delete(`${this.db_url}/${id}`);
   }
+  putAvenger(id: string, editedProduct: any) {
+    return this.http.put(`${this.db_url}/${id}`, editedProduct);
+  }
+
+  editProduct(product:any) {
+    this.productData = product;
+  }
+
+  resetProductData() {
+    this.productData = {
+      id: '',
+      name: '',
+      price: '',
+      description: '',
+      stars: '',
+      image: ''
+    };
+  }
 }

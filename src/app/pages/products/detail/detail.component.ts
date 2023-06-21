@@ -32,4 +32,9 @@ export class DetailComponent {
       this.router.navigate(['products']);
     })
   }
+
+  editProduct(product:ProductI) {
+    this.service.editProduct(product);
+    this.router.navigate(['gestion']);
+  }
 }

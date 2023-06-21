@@ -11,6 +11,7 @@ import { GestionComponent } from './pages/gestion/gestion.component';
 import { DetailComponent } from './pages/products/detail/detail.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
+import { PreviewComponent } from './pages/gestion/preview/preview.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from "@angular/common/http";
     HomeComponent,
     ProductsComponent,
     GestionComponent,
-    DetailComponent
+    DetailComponent,
+    PreviewComponent
   ],
   imports: [
     BrowserModule,

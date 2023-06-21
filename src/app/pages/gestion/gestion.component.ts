@@ -17,7 +17,7 @@ export class GestionComponent {
     private router: Router){}
 
   public newProduct = this.service.productData;
-  public avengerId = this.service.productData.id;
+  public productId = this.service.productData.id;
 
   ngOnInit() : void {
     this.productForm = this.formBuilder.group({
@@ -34,11 +34,20 @@ export class GestionComponent {
 
   }
 
+  ngOnDestroy() : void {
+    this.service.resetProductData();
+  }
+
   onSubmit() {
-    console.log(this.newProduct);
-    this.service.postProduct(this.newProduct).subscribe();
-    alert('producto creado');
-    this.router.navigate(['products']);
+    if(this.productId !== '') {
+      this.service.putAvenger(this.productId,this.newProduct).subscribe();
+      alert('producto editado');
+    } else {
+      this.service.postProduct(this.newProduct).subscribe();
+      alert('producto creado');
+    }
+    
     this.productForm.reset();
+    this.router.navigate(['products']);
   }
 }
