@@ -1,0 +1,9 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+    <input placeholder="Nombre" formControlName="name" type="text"/>
+    <input placeholder="Precio" formControlName="price" type="number"/>
+    <input placeholder="Descripción" formControlName="description" type="text"/>
+    <input placeholder="Estrellas" formControlName="stars" type="number"/>
+    <input placeholder="URL imagen" formControlName="image" type="text"/>
+    <button type="submit" [disabled]="!productForm.valid">Guardar</button>
+</form>
+

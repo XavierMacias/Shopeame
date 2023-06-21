@@ -1,0 +1,8 @@
+<ul>
+    <li *ngFor="let product of productsList">
+        <h2>{{product.name}}</h2>
+        <p>{{product.price}}</p>
+        <img src="{{product.image}}" alt="{{product.name}}"/>
+        <button routerLink="/products/{{product.id}}">Ver más...</button>
+    </li>
+</ul>
