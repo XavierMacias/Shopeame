@@ -1,0 +1,62 @@
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.itemlist {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border: solid 2px black;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+.button {
+    padding: 10px;
+}
+
+.toplist {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+
+h3 {
+    margin: 20px;
+    text-align: center;
+    font-weight: 200;
+    font-size: 20px;
+}
+
+.filter {
+    padding: 10px;
+    width: 20%;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.button {
+    color: dodgerblue;
+    padding: 8px 21px;
+    background-color: white;
+    border: 2px solid;
+    border-color: #2196F3;
+    border-radius: 12%;
+    float: right;
+}
+
+.button:hover {
+    background: #2196F3;
+    color: white;
+  }

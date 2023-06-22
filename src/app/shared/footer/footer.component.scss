@@ -1,0 +1,33 @@
+.links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+a {
+    margin: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px 0px 20px;
+}
+
+.copyright {
+    padding-top: 50px;
+}
+
+.line {
+    background-color: white;
+    width: 2px;
+    height: 20px;
+}

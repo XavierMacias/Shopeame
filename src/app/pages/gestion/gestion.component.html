@@ -1,11 +1,41 @@
-<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
-    <input placeholder="Nombre" formControlName="name" type="text"/>
-    <input placeholder="Precio" formControlName="price" type="number"/>
-    <input placeholder="Descripción" formControlName="description" type="text"/>
-    <input placeholder="Estrellas" formControlName="stars" type="number"/>
-    <input placeholder="URL imagen" formControlName="image" type="text"/>
-    <button type="submit" [disabled]="!productForm.valid">Guardar</button>
-</form>
+<div class="withpreview">
+    <div class="formulary">
+        <h2>{{action}} de productos</h2>
 
-<app-preview [product]="newProduct"></app-preview>
+        <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+            <div class="field">
+                <label for="name">Nombre del producto:</label>
+                <input placeholder="Por ej: Tiesto para planta" id="name" name="name" formControlName="name" type="text"/>
+                <p class="error" *ngIf="(submitted && productForm.get('name')?.hasError('required'))">Este campo es requerido</p>
+            </div>
+            <div class="field">
+                <label for="price">Precio:</label>
+                <input placeholder="Por ej: 9.50" id="price" name="price" formControlName="price" type="number"/>
+                <p class="error" *ngIf="(submitted && productForm.get('price')?.hasError('required'))">Este campo es requerido</p>
+                <p class="error" *ngIf="(submitted && productForm.get('price')?.hasError('min'))">El precio debe ser mayor de 0</p>
+            </div>
+            <div class="field">
+                <label for="description">Descripción:</label>
+                <input placeholder="Por ej: Lo más vendido este mes" id="description" name="description" formControlName="description" type="text"/>
+                <p class="error" *ngIf="(submitted && productForm.get('description')?.hasError('required'))">Este campo es requerido</p>
+            </div>
+            <div class="field">
+                <label for="stars">Opiniones:</label>
+                <input placeholder="Por ejemplo: 4" id="stars" min="1" max="5" name="stars" formControlName="stars" type="number"/>
+                <p class="error" *ngIf="(submitted && productForm.get('stars')?.hasError('required'))">Este campo es requerido</p>
+                <p class="error" *ngIf="(submitted && productForm.get('stars')?.hasError('min'))">La valoración debe ser entre 1 y 5</p>
+                <p class="error" *ngIf="(submitted && productForm.get('stars')?.hasError('max'))">La valoración debe ser entre 1 y 5</p>
+                <p class="error" *ngIf="(submitted && productForm.get('stars')?.hasError('pattern'))">La valoración debe ser un número entero</p>
+            </div>    
+            <div class="field">
+                <label for="image">Ruta de la imagen:</label>
+                <input placeholder="Por ej: http://blabla.com/img.jpg" id="image" name="image" formControlName="image" type="text"/>
+                <p class="error" *ngIf="(submitted && productForm.get('image')?.hasError('required'))">Este campo es requerido</p>
+            </div>
+            <button type="submit">Guardar</button> <!--[disabled]="!productForm.valid -->
+        </form>
+    </div>
 
+    <div class="separator"></div>
+    <app-preview [product]="newProduct"></app-preview>
+</div>

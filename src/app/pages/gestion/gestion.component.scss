@@ -1,0 +1,68 @@
+.withpreview {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    margin: 50px 40px;
+    padding: 20px 50px;
+}
+
+.formulary {
+    padding: 30px;
+    border-radius: 3%;
+    margin: 30px 40px 10px;
+}
+
+.error {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.separator {
+    background-color: orange;
+    width: 2px;
+    height: 620px;
+}
+
+.field {
+    padding: 10px;
+}
+
+input {
+    padding: 5px 10px;
+    border: solid 2px gray;
+    border-radius: 5px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+button {
+    padding: 8px 21px;
+    background-color: white;
+    border: 2px solid;
+    border-radius: 12%;
+    float: right;
+    margin: 30px;
+    color: rgb(0, 164, 0);
+    border-color: green;
+}
+
+button:hover {
+    background: green;
+    color: white;
+}

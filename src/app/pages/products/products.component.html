@@ -1,8 +1,13 @@
-<ul>
-    <li *ngFor="let product of productsList">
-        <h2>{{product.name}}</h2>
-        <p>{{product.price}}</p>
+<div class="toplist">
+    <h2>Listado de productos</h2>
+    <input class="filter" type="text" placeholder="Buscador" />
+</div>
+
+<ul class="list">
+    <li class="itemlist" *ngFor="let product of productsList">
         <img src="{{product.image}}" alt="{{product.name}}"/>
-        <button routerLink="/products/{{product.id}}">Ver más...</button>
+        <h3>{{product.name}}</h3>
+        <p class="price">${{product.price}}</p>
+        <button class="button" routerLink="/products/{{product.id}}">Ver más...</button>
     </li>
 </ul>

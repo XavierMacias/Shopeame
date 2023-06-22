@@ -8,4 +8,5 @@ import { ProductI } from 'src/app/models/interface';
 })
 export class PreviewComponent {
   @Input() product!: any;
+    
 }

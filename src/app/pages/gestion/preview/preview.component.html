@@ -1,7 +1,11 @@
-<div>
+<h2>Preview:</h2>
+<div class="preview">
     <h2>{{product.name}}</h2>
-    <p>{{product.price}}</p>
-    <p>{{product.stars}}</p>
+    <p *ngIf="product.price != '' && product.price != null" class="price">${{product.price}}</p>
+    <div *ngIf="product.stars != '' && product.stars != null" class="rating">
+        <p>{{product.stars}}</p> 
+        <p-rating [(ngModel)]="product.stars" [readonly]="true" [cancel]="false"></p-rating>
+    </div>
     <p>{{product.description}}</p>
     <img src="{{product.image}}" alt="{{product.name}}"/>
 </div>

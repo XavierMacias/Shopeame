@@ -12,6 +12,7 @@ import { DetailComponent } from './pages/products/detail/detail.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from "@angular/common/http";
 import { PreviewComponent } from './pages/gestion/preview/preview.component';
+import { RatingModule } from 'primeng/rating';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PreviewComponent } from './pages/gestion/preview/preview.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RatingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

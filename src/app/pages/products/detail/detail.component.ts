@@ -11,6 +11,7 @@ import { ServiceService } from 'src/app/services/service.service';
 export class DetailComponent {
   id!: number;
   product!: ProductI;
+  overlay:boolean = false;
 
   constructor(
     private service: ServiceService,
@@ -24,6 +25,14 @@ export class DetailComponent {
     this.service.getProductById(this.id).subscribe((data:any) => {
       this.product = data;
     })
+  }
+
+  on() {
+    this.overlay = true;
+  }
+  
+  off() {
+    this.overlay = false;
   }
 
   removeProduct() {

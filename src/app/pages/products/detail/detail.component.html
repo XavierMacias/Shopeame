@@ -1,10 +1,30 @@
-<div>
-    <h2>{{product.name}}</h2>
-    <p>{{product.price}}</p>
-    <p>{{product.stars}}</p>
-    <p>{{product.description}}</p>
-    <img src="{{product.image}}" alt="{{product.name}}"/>
 
-    <button (click)="editProduct(product)">Editar</button>
-    <button (click)="removeProduct()">Eliminar</button>
+<div class="details">
+    <div class="info">
+        <div class="noimage">
+            <h2>{{product.name}}</h2>
+            <div class="pricerating">
+                <p class="price">${{product.price}}</p>
+                <div class="rating">
+                    <p>{{product.stars}}</p> 
+                    <p-rating [(ngModel)]="product.stars" [readonly]="true" [cancel]="false"></p-rating>
+                </div>
+            </div>
+            <p class="description">{{product.description}}</p>
+        </div>
+        <img src="{{product.image}}" alt="{{product.name}}"/>
+    </div>
+
+    <div class="buttons">
+        <button class="btn edit" (click)="editProduct(product)">Editar</button>
+        <button class="btn delete" (click)="on()">Eliminar</button>
+    </div>
+</div>
+
+<div [ngClass]="{'overlay': overlay, 'noshow': !overlay}">
+    <div class="text">¿Seguro que quieres eliminar este producto?</div>
+    <div class="buttons">
+        <button class="btn delete" (click)="removeProduct()">Sí</button>
+        <button class="btn cancel" (click)="off()">No</button>
+    </div>
 </div>

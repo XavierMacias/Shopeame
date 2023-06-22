@@ -1,0 +1,32 @@
+.preview {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+p-rating {
+    margin: 10px;
+    color: rgb(255, 181, 43);
+    text-shadow: 1px 0 #d59423, -1px 0 #d59423, 0 1px #d59423, 0 -1px #d59423,
+               1px 1px #d59423, -1px -1px #d59423, 1px -1px #d59423, -1px 1px #d59423;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 25px;
+    padding: 0 40px 0px;
+}
+
+img {
+    width: 200px;
+}
