@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ObservableInput } from 'rxjs';
 import { ProductI } from 'src/app/models/interface';
 import { ServiceService } from 'src/app/services/service.service';
 
@@ -9,6 +10,7 @@ import { ServiceService } from 'src/app/services/service.service';
 })
 export class ProductsComponent {
   productsList: ProductI[] = [];
+  filteredList: ProductI[] = [];
 
   constructor(private service : ServiceService) {}
 
@@ -16,7 +18,14 @@ export class ProductsComponent {
     this.service.getProducts().subscribe((data: any) => { 
       console.log(data); 
       this.productsList = [...data];
+      this.filteredList = [...data];
     })
+  }
+
+  filter(event: Event) {
+    const input = event.target as HTMLInputElement;
+    console.log(input.value);
+    this.filteredList=this.productsList.filter((product)=> product.name.toLowerCase().includes(input.value.toLowerCase()))
   }
 
 }
