@@ -12,6 +12,7 @@ export class GestionComponent {
   productForm!: FormGroup;
   submitted: boolean = false;
   action:string = "Creación";
+  overlay:boolean = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -50,16 +51,21 @@ export class GestionComponent {
       if(this.productId !== '') {
         this.service.putAvenger(this.productId,this.newProduct).subscribe();
         this.submitted = false;
-        alert('producto editado');
+        //alert('producto editado');
       } else {
         this.service.postProduct(this.newProduct).subscribe();
         this.submitted = false;
-        alert('producto creado');
+        //alert('producto creado');
       }
       
       this.productForm.reset();
-      this.router.navigate(['products']);
+      this.overlay = true;
+      //this.router.navigate(['products']);
     }
     
+  }
+
+  ok() {
+    this.router.navigate(['products']);
   }
 }

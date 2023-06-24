@@ -38,4 +38,10 @@
 
     <div class="separator"></div>
     <app-preview [product]="newProduct"></app-preview>
+
+    <div [ngClass]="{'overlay': overlay, 'noshow': !overlay}">
+        <p *ngIf="action === 'Creación'">Producto creado</p>
+        <p *ngIf="action !== 'Creación'">Producto modificado</p>
+        <button class="btn confirm" (click)="ok()">Ok</button>
+    </div>
 </div>

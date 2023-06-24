@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { ObservableInput } from 'rxjs';
+import { Component } from '@angular/core';
 import { ProductI } from 'src/app/models/interface';
 import { ServiceService } from 'src/app/services/service.service';
 

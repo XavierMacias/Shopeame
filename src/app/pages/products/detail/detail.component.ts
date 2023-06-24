@@ -37,7 +37,7 @@ export class DetailComponent {
 
   removeProduct() {
     this.service.deleteProduct(this.id).subscribe((data:any) => {
-      alert("producto eliminado");
+      //alert("producto eliminado");
       this.router.navigate(['products']);
     })
   }

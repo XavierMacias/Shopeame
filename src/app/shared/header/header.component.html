@@ -3,15 +3,15 @@
 </div>
 
 <nav>
-    <a class="option" routerLink="/">
+    <a class="option" [ngClass]="{'current':url === '/'}" routerLink="/">
         <img class="iconmenu" src="../../../assets/imgs/homa.png" alt="home"/>
         <p>Home</p>
     </a>
-    <a class="option" routerLink="/products">
+    <a class="option" [ngClass]="{'current':url === '/products'}" routerLink="/products">
         <img class="iconmenu" src="../../../assets/imgs/busqueda.png" alt="products"/>
         <p>Productos</p>
     </a>
-    <a class="option" routerLink="/gestion">
+    <a class="option" [ngClass]="{'current':url === '/gestion'}" routerLink="/gestion">
         <img class="iconmenu" src="../../../assets/imgs/configuraciones.png" alt="gestion"/>
         <p>Gestión</p>
     </a> 
