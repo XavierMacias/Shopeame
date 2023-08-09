@@ -6,3 +6,10 @@ export interface ProductI{
     stars: number;
     image: string;
 }
+
+export interface UserI{
+    username:string;
+    mail:string;
+    password:string;
+    role:string;
+}

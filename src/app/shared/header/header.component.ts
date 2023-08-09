@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent {
 
   url?:string;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public authService: AuthService) {
     this.router.events.subscribe((val) => {
       // see also 
       if(val instanceof NavigationEnd) {
@@ -18,5 +19,10 @@ export class HeaderComponent {
         this.url = val.url;
       }
   });
+  }
+
+  logout(){
+    this.authService.logOut();
+    this.router.navigate(['/login']);
   }
 }

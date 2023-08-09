@@ -10,9 +10,12 @@ import { ProductsComponent } from './pages/products/products.component';
 import { GestionComponent } from './pages/gestion/gestion.component';
 import { DetailComponent } from './pages/products/detail/detail.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
+import { HTTP_INTERCEPTORS, HttpClientModule } from "@angular/common/http";
 import { PreviewComponent } from './pages/gestion/preview/preview.component';
 import { RatingModule } from 'primeng/rating';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { InterceptorService } from './shared/interceptors/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { RatingModule } from 'primeng/rating';
     ProductsComponent,
     GestionComponent,
     DetailComponent,
-    PreviewComponent
+    PreviewComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,11 @@ import { RatingModule } from 'primeng/rating';
     ReactiveFormsModule,
     RatingModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: InterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

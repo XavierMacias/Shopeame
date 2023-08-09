@@ -7,11 +7,13 @@
         <img class="iconmenu" src="../../../assets/imgs/homa.png" alt="home"/>
         <p>Home</p>
     </a>
-    <a class="option" [ngClass]="{'current':url === '/products'}" routerLink="/products">
+    <a *ngIf="!authService.getToken()"  class="option" [ngClass]="{'current':url === '/login'}" routerLink="/login">Login</a>
+    <a *ngIf="!authService.getToken()"  class="option" [ngClass]="{'current':url === '/register'}" routerLink="/register">Register</a>
+    <a *ngIf="authService.getToken()" class="option" [ngClass]="{'current':url === '/products'}" routerLink="/products">
         <img class="iconmenu" src="../../../assets/imgs/busqueda.png" alt="products"/>
         <p>Productos</p>
     </a>
-    <a class="option" [ngClass]="{'current':url === '/gestion'}" routerLink="/gestion">
+    <a *ngIf="authService.getToken()" class="option" [ngClass]="{'current':url === '/gestion'}" routerLink="/gestion">
         <img class="iconmenu" src="../../../assets/imgs/configuraciones.png" alt="gestion"/>
         <p>Gestión</p>
     </a> 
